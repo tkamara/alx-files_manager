@@ -8,17 +8,9 @@ class RedisClient {
       console.log(`Error: ${err}`);
     });
   }
-
+// update on isAlive
   isAlive() {
-    return new Promise((resolve) => {
-      this.client.on('connect', () => {
-        resolve(true);
-      });
-
-      this.client.on('error', () => {
-        resolve(false);
-      });
-    });
+    return this.client.connected;
   }
 
   async get(key) {

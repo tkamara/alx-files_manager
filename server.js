@@ -1,9 +1,11 @@
 import express from 'express';
-import routes from './routes';
+import controlRouting from './routes/index';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT);
 
-app.use('/', routes);
+app.use(express.json());
+
+controlRouting(app);

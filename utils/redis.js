@@ -8,7 +8,8 @@ class RedisClient {
       console.log(`Error: ${err}`);
     });
   }
-// update on isAlive
+
+  // update on isAlive
   isAlive() {
     return this.client.connected;
   }
